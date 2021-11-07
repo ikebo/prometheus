@@ -26,7 +26,7 @@ def decrypt_config(encrypt_config):
     return name, method, decrypt_ip(host), decrypt_port(port), key
 
 def get_nodes():
-    url = "http://smallwings.cc/api/server_list?skt=7mA9gI9D3DO3Pdf1NhtcFOJg0P1OnD"
+    url = "http://api.smallwings.cc/api/server_list?skt=7mA9gI9D3DO3Pdf1NhtcFOJg0P1OnD"
     res = requests.get(url)
     return [decrypt_config(ns) for ns in res.json()['data']]
 
